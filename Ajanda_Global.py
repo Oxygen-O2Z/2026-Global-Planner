@@ -146,7 +146,8 @@ init_db()
 # --- Dil Seçimi (Sidebar) ---
 with st.sidebar:
     st.header("Language / Dil")
-    selected_lang_key = st.selectbox("Select Language", list(LANGUAGES.keys()))
+    # BURADA DEĞİŞİKLİK YAPILDI: index=1 (English) varsayılan oldu
+    selected_lang_key = st.selectbox("Select Language", list(LANGUAGES.keys()), index=1)
     L = LANGUAGES[selected_lang_key] # Seçilen dilin sözlüğünü 'L' değişkenine ata
 
 st.title(L["title"])
